@@ -10,7 +10,7 @@ class PreferenciasUsuario {
 
   PreferenciasUsuario._internal();
 
-  SharedPreferences? _prefs;
+  late SharedPreferences _prefs;
 
   initPrefs() async {
     this._prefs = await SharedPreferences.getInstance();
@@ -18,39 +18,39 @@ class PreferenciasUsuario {
 
   // GET y SET del Genero
   int get genero {
-    return _prefs!.getInt('genero') ?? 1;
+    return _prefs.getInt('genero') ?? 1;
   }
 
   set genero( int value ) {
-    _prefs!.setInt('genero', value);
+    _prefs.setInt('genero', value);
   }
 
   // GET y SET del _colorSecundario
   bool get colorSecundario {
-    return _prefs!.getBool('colorSecundario') ?? false;
+    return _prefs.getBool('colorSecundario') ?? false;
   }
 
   set colorSecundario( bool value ) {
-    _prefs!.setBool('colorSecundario', value);
+    _prefs.setBool('colorSecundario', value);
   }
 
 
   // GET y SET del nombreUsuario
   String get nombreUsuario {
-    return _prefs!.getString('nombreUsuario') ?? '';
+    return _prefs.getString('nombreUsuario') ?? '';
   }
 
   set nombreUsuario( String value ) {
-    _prefs!.setString('nombreUsuario', value);
+    _prefs.setString('nombreUsuario', value);
   }
 
     // GET y SET de la última página
   String get ultimaPagina {
-    return _prefs!.getString('ultimaPagina') ?? 'home';
+    return _prefs.getString('ultimaPagina') ?? 'home';
   }
 
   set ultimaPagina( String value ) {
-    _prefs!.setString('ultimaPagina', value);
+    _prefs.setString('ultimaPagina', value);
   }
 
 }
